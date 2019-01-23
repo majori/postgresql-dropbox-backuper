@@ -1,0 +1,10 @@
+language: bash
+services:
+  - docker
+
+after_success:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - export REPOSITORY=$DOCKER_USERNAME/postgresql-dropbox-backuper
+  - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH | tr "/" "_" ; fi`
+  - docker build -t $REPOSITORY:$TAG .
+  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then docker push $REPOSITORY:$TAG; fi'
