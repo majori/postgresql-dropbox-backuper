@@ -17,7 +17,7 @@ RUN echo "Europe/Helsinki" > /etc/timezone
 
 RUN mkdir dumps
 
-# TODO: Get interval from variable
-RUN echo '0 8 * * * /root/run-backup.sh' >> /etc/crontabs/root
+COPY init.sh .
+RUN chmod +x ./init.sh
 
-CMD ["crond", "-f"]
+CMD ["./init.sh"]
