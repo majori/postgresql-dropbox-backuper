@@ -20,7 +20,7 @@ The script uses `pg_dump` to create dump from the database, compress it with `gz
     -e "PGDATABASE=<...>" \
     -e "PGUSERNAME=<...>" \
     -e "PGPASSWORD=<...>" \
-    -e "INTERVAL='0 0 * * * *'" \
+    -e "INTERVAL='0 0 * * *'" \
     -d \
     majori/postgresql-dropbox-backuper
   ```
@@ -36,4 +36,4 @@ The script uses `pg_dump` to create dump from the database, compress it with `gz
 
 **PGUSERNAME** (default postgres)
 
-**INTERVAL** (defaults "0 0 * * * *")
+**INTERVAL** (defaults "0 0 * * *")
