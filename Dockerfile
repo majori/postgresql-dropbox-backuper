@@ -1,7 +1,7 @@
 FROM alpine:edge
 WORKDIR /root
 
-RUN apk add --no-cache postgresql-client curl gzip bash tzdata
+RUN apk add --no-cache postgresql-client curl gzip bash tzdata openssl
 
 RUN curl "https://raw.githubusercontent.com/andreafabrizi/Dropbox-Uploader/master/dropbox_uploader.sh" -o dropbox_uploader.sh
 RUN chmod +x dropbox_uploader.sh

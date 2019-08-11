@@ -37,3 +37,5 @@ The script uses `pg_dump` to create dump from the database, compress it with `gz
 **PGUSERNAME** (default postgres)
 
 **INTERVAL** (defaults "0 0 * * *")
+
+**PASSWORD** (optional) Encrypt database dump with OpenSSL
