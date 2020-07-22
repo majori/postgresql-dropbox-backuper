@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+set -e
+
 PG_DATABASE=${PG_DATABASE:-postgres}
 FILE_NAME=${PG_HOSTNAME}_${PG_DATABASE}_dump_`date "+%Y-%m-%dT%H-%M-%S"`.sql.gz
 
