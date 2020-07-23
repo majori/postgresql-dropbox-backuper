@@ -18,10 +18,10 @@ The script uses `pg_dump` to create dump from the database, compress it with `gz
     --name pg-backuper \
     --network container:<postgresql-container-name> \
     -e "DROPBOX_TOKEN=<your-access-token>" \
-    -e "PGHOSTNAME=<postgresql-container-name>" \
-    -e "PGDATABASE=<...>" \
-    -e "PGUSERNAME=<...>" \
-    -e "PGPASSWORD=<...>" \
+    -e "PG_HOSTNAME=<postgresql-container-name>" \
+    -e "PG_DATABASE=<...>" \
+    -e "PG_USERNAME=<...>" \
+    -e "PG_PASSWORD=<...>" \
     -e "INTERVAL='0 0 * * *'" \
     -d \
     majori/postgresql-dropbox-backuper
