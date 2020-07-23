@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
+export PGPASSWORD=$PG_PASSWORD # pg_dump reads password from variable PGPASSWORD
+
 PG_DATABASE=${PG_DATABASE:-postgres}
 FILE_NAME=${PG_HOSTNAME}_${PG_DATABASE}_dump_`date "+%Y-%m-%dT%H-%M-%S"`.sql.gz
 
