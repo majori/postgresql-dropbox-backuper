@@ -1,4 +1,4 @@
-FROM alpine:edge
+FROM alpine:3.12
 WORKDIR /root
 
 RUN apk add --no-cache postgresql-client curl gzip bash tzdata openssl
